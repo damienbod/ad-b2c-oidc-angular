@@ -60,6 +60,7 @@ export class AppModule {
         this.oidcConfigService.onConfigurationLoaded.subscribe(() => {
 
             const openIDImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
+
             openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/tfp/fabrikamb2c.onmicrosoft.com/b2c_1_susi/oauth2/v2.0/';
             openIDImplicitFlowConfiguration.redirect_url = 'http://localhost:65328/redirect.html';
             openIDImplicitFlowConfiguration.client_id = 'e760cab2-b9a1-4c0d-86fb-ff7084abd902';
@@ -69,6 +70,7 @@ export class AppModule {
             openIDImplicitFlowConfiguration.post_login_route = '/home';
             openIDImplicitFlowConfiguration.forbidden_route = '/home';
             openIDImplicitFlowConfiguration.unauthorized_route = '/home';
+			openIDImplicitFlowConfiguration.silent_renew = false;
             openIDImplicitFlowConfiguration.auto_userinfo = false;
             openIDImplicitFlowConfiguration.log_console_warning_active = true;
             openIDImplicitFlowConfiguration.log_console_debug_active = !environment.production;
