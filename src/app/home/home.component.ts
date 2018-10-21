@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   callApi() {
     const token = this.oidcSecurityService.getToken();
-    const apiURL = 'https://fabrikamb2chello.azurewebsites.net/hello';
+    const apiURL = 'https://damienbod.onmicrosoft.com/testapi';
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
     this.http.get(apiURL, { headers: headers }).subscribe(

@@ -18,7 +18,7 @@ import {
 
 export function loadConfig(oidcConfigService: OidcConfigService) {
     console.log('APP_INITIALIZER STARTING');
-    return () => oidcConfigService.load_using_custom_stsServer('https://login.microsoftonline.com/fabrikamb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=b2c_1_susi');
+    return () => oidcConfigService.load_using_custom_stsServer('https://login.microsoftonline.com/damienbod.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_b2cpolicydamien');
 }
 
 const appRoutes: Routes = [
@@ -61,11 +61,11 @@ export class AppModule {
 
             const openIDImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
 
-            openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/tfp/fabrikamb2c.onmicrosoft.com/b2c_1_susi/oauth2/v2.0/';
+            openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/damienbod.onmicrosoft.com/v2.0';
             openIDImplicitFlowConfiguration.redirect_url = 'http://localhost:65328/redirect.html';
-            openIDImplicitFlowConfiguration.client_id = 'e760cab2-b9a1-4c0d-86fb-ff7084abd902';
+            openIDImplicitFlowConfiguration.client_id = 'f1934a6e-958d-4198-9f36-6127cfc4cdb3';
             openIDImplicitFlowConfiguration.response_type = 'id_token token';
-            openIDImplicitFlowConfiguration.scope = 'openid https://fabrikamb2c.onmicrosoft.com/demoapi/demo.read';
+            openIDImplicitFlowConfiguration.scope = 'openid https://damienbod.onmicrosoft.com/testapi/demo.read';
             openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'http://localhost:65328';
             openIDImplicitFlowConfiguration.post_login_route = '/home';
             openIDImplicitFlowConfiguration.forbidden_route = '/home';
